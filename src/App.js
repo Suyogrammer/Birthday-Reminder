@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
+import api from "./api/data";
+import List from "./components/List";
 
 function App() {
+  const [data, setData] = useState(api);
+  const [showData, setShowData] = useState(true);
+
+  function handleClick() {
+    setShowData((prev) => !prev);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>{showData ? data.length : 0} Birthday Reminder</h1>
+      {showData ? <List data={data} /> : null}
+      <button className="button" onClick={() => handleClick()}>
+        {showData ? "Clear All" : "Retrieve Data"}
+      </button>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #fff;
+  margin: 10% 40%;
 }
 
 .App-logo {
@@ -35,4 +37,46 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  background-color: rgb(255, 148, 166);
+}
+
+.image {
+  display: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 70%;
+}
+
+.name {
+  font-size: medium;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.name {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.age {
+  padding-top: 20px;
+  color: gray;
+}
+
+.button {
+  height: 50px;
+  width: 200px;
+  margin-bottom: 20px;
+  background-color: rgb(255, 101, 126);
+  color: white;
+  font-size: large;
+  border-color: rgb(255, 101, 126);
+  border-radius: 10%;
 }
